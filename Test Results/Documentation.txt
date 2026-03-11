@@ -130,3 +130,6 @@ Max Drawdown: -12.09%
 Win Rate: 47.5%
 Volatility: 14.27%
 Total Trades: 3,000
+
+Time Taken For Base RSI + MACD with 4080 GPU = 3min 8.3s, 2min 59.2s
+Time Taken For Efficient RSI + MACD with 4080 GPU = 3min 7.1s, 2min 57s
