@@ -1,0 +1,132 @@
+[DEV SPLIT - For Experimentation]
+Loading DEV split data...
+Cleaning and preprocessing data...
+Data ready: 1,332,576 price records
+Running evaluation...
+Computing technical indicators (MA-50)...
+Technical indicators computed: 1,332,576 rows
+Running backtest simulation...
+Return: 299.84%
+Sharpe: 1.19
+Max Drawdown: -57.41%
+
+======================================================================
+BASELINE STRATEGY EVALUATION
+======================================================================
+
+[VAL SPLIT - Final Performance]
+Loading VAL split data...
+Cleaning and preprocessing data...
+Data ready: 598,740 price records
+Running evaluation...
+Computing technical indicators (MA-50)...
+Technical indicators computed: 598,740 rows
+Running backtest simulation...
+Return: 12.45%
+Sharpe: 0.41
+Max Drawdown: -35.42%
+Win Rate: 27.8%
+Volatility: 43.80%
+Total Trades: 3,639
+
+======================================================================
+ENHANCED STRATEGY EVALUATION (Development) RSI + MACD
+======================================================================
+
+[DEV SPLIT - For Development]
+Loading DEV split data...
+Cleaning and preprocessing data...
+Data ready: 1,242,868 price records
+Running evaluation...
+Running backtest simulation...
+Return: 165.52%
+Sharpe Ratio: 1.50
+Max Drawdown: -18.52%
+Win Rate: 49.4%
+Volatility: 18.61%
+Total Trades: 12,596
+
+======================================================================
+FINAL PERFORMANCE RSI + MACD
+======================================================================
+
+[VAL SPLIT - Final Performance]
+Loading VAL split data...
+Cleaning and preprocessing data...
+Data ready: 596,741 price records
+Running evaluation...
+Running backtest simulation...
+Return: 55.80%
+Sharpe Ratio: 1.51
+Max Drawdown: -12.35%
+Win Rate: 48.7%
+Volatility: 21.94%
+Total Trades: 4,777
+
+======================================================================
+ENHANCED STRATEGY EVALUATION (Development) RSI + MACD + BOLLINGER BANDS
+======================================================================
+
+[DEV SPLIT - For Development]
+Loading DEV split data...
+Cleaning and preprocessing data...
+Data ready: 1,242,868 price records
+Running evaluation...
+Running backtest simulation...
+Return: 103.31%
+Sharpe Ratio: 1.64
+Max Drawdown: -9.69%
+Win Rate: 49.4%
+Volatility: 12.10%
+Total Trades: 7,767
+
+======================================================================
+FINAL PERFORMANCE RSI + MACD + BOLLINGER BANDS
+======================================================================
+
+[VAL SPLIT - Final Performance]
+Loading VAL split data...
+Cleaning and preprocessing data...
+Data ready: 596,741 price records
+Running evaluation...
+Running backtest simulation...
+Return: 29.01%
+Sharpe Ratio: 1.31
+Max Drawdown: -12.09%
+Win Rate: 47.5%
+Volatility: 14.27%
+Total Trades: 3,000
+
+======================================================================
+ENHANCED STRATEGY EVALUATION (Development) RSI + MACD + BOLLINGER BANDS + ATX-ADX
+======================================================================
+
+[DEV SPLIT - For Development]
+Loading DEV split data...
+Cleaning and preprocessing data...
+Data ready: 1,242,868 price records
+Running evaluation...
+Running backtest simulation...
+Return: 103.31%
+Sharpe Ratio: 1.64
+Max Drawdown: -9.69%
+Win Rate: 49.4%
+Volatility: 12.10%
+Total Trades: 7,767
+
+======================================================================
+FINAL PERFORMANCE RSI + MACD + BOLLINGER BANDS + ATX-ADX
+======================================================================
+
+[VAL SPLIT - Final Performance]
+Loading VAL split data...
+Cleaning and preprocessing data...
+Data ready: 596,741 price records
+Running evaluation...
+Running backtest simulation...
+Return: 29.01%
+Sharpe Ratio: 1.31
+Max Drawdown: -12.09%
+Win Rate: 47.5%
+Volatility: 14.27%
+Total Trades: 3,000
