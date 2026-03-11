@@ -1,0 +1,271 @@
+Here is the word-for-word text from the provided document:
+
+--- PAGE 1 ---
+
+INF2006 Cloud Computing and Big Data
+Group Project Assignment
+Algorithmic Trading Strategy Development and
+Optimisation
+
+1. Introduction
+Big data analytics enables organisations to extract actionable insights from large-scale datasets through advanced computational techniques. In this group project, you will apply big data concepts, parallel computing, and natural language processing to develop and optimise algorithmic trading strategies using real-world financial data.
+You will work with S&P 500 historical market data and earnings call transcripts to systematically improve a provided baseline trading strategy through iterative experimentation and careful evaluation. The emphasis is on data processing efficiency, strategy development methodology, and understanding the computational challenges of working at scale.
+The project provides a baseline implementation within the BaseStrategy class, complemented by a complete infrastructure framework for simulating trading scenarios. Your objective is to enhance the baseline functionality in the EnhancedStrategy class to achieve superior performance. To support systematic development, the data is partitioned into three distinct sets:
+Dataset Split:
+Development Set (2000-2017): Use exclusively for all iterative experimentation and hyperparameter tuning. Create internal train/validation subsets within this period for iterative testing. This is where all your development work should happen.
+Validation Set (2018-2024): Use only once as a final checkpoint when your strategy is complete. Do not modify your strategy after seeing validation results, as this leads to overfitting.
+Test Set: This held-out dataset will be used for final assessment. Performance across all three datasets (development, validation, and test) will contribute to your overall grade, emphasizing the importance of building generalizable solutions rather than overfitting to any single dataset.
+Comprehensive visualization tools and performance metrics are provided to support systematic evaluation of your enhanced strategy relative to the baseline, enabling evidence-based refinement throughout your development workflow.
+2. Project Overview
+Your team will build an enhanced algorithmic trading strategy on top of a provided baseline. The system processes historical stock price data and earnings call transcripts to generate buy and sell signals, then simulates portfolio performance over a multi-year period.
+INF2006 | Group Project Assignment 2 Page 1
+
+--- PAGE 2 ---
+
+| Component | Description |
+| --- | --- |
+| Data | Historical daily prices for a subset of S&P 500 stocks (2000-2024) and quarterly earnings call transcripts |
+| Baseline | A working trading strategy is provided; the objective is to improve upon it |
+| Framework | A backtesting engine and performance metrics are already implemented and available for use |
+| Language | Python (Google Colab) |
+
+The project is structured across three phases:
+Phase 1: Data Exploration and Baseline Evaluation - understand the data, run the baseline, identify opportunities
+Phase 2: Strategy Development and Optimisation - build and iterate the enhanced strategy using the development data
+Phase 3: Performance Evaluation and Analysis - evaluate the final strategy on held-out data and document findings
+3. Requirements
+3.1 What You Must Build
+You must implement an enhanced trading strategy that meaningfully improves upon the provided baseline. Improvements should span across the areas listed below. Full guidance on each area is provided in Appendix C.
+
+| Area | What to Improve |
+| --- | --- |
+| 1. Exploratory Data Analysis | The baseline includes a basic EDA; extend this to develop a deeper understanding of the data and inform design decisions |
+| 2. Data Cleaning and Preparation | Ensure the input data is clean and reliable before running any strategy |
+| 3. Technical Indicators and Features | Add indicators beyond the baseline's single moving average to better characterise market conditions |
+| 4. Earnings Transcript Analysis | Extract more useful information from earnings calls using FinBERT |
+| 5. Entry, Exit, and Risk Rules | Refine when positions are opened and closed, and how capital is allocated across them |
+
+INF2006 | Group Project Assignment 2 Page 2
+
+--- PAGE 3 ---
+
+3.2 Scalability and Efficiency
+Given the volume of data covering a large number of stocks over more than a decade computational efficiency is a graded requirement. The solution should be designed to be scalable and robust, and any optimisations must be documented in the report. Refer to Appendix D for guidance.
+3.4 Development Workflow and Validation Discipline
+To ensure your strategy generalizes well and avoid overfitting, follow this development workflow:
+Development Phase:
+
+* Split your development set into training and internal validation subsets for iterative experimentation
+* Use cross-validation or hold-out validation within the development period to tune parameters and test ideas
+* Iterate freely on these development subsets—this is where all your experimentation should happen
+Validation Check:
+* Only when you are confident in your strategy's design and have completed development, evaluate it on the validation set
+* The validation set serves as a final checkpoint to verify generalization before submission. Critical: Once you evaluate on the validation set, you should not modify your strategy further based on those results. Making changes after seeing validation performance will cause your strategy to overfit to the validation set, defeating its purpose.
+Final Assessment:
+* A separate test set (completely held-out) will be used for grading alongside your development and validation results.
+3.4 Technical Report
+Your technical report must comprehensively document your development process and findings. This includes:
+
+1. Enhanced exploratory data analysis demonstrating deeper insights beyond the baseline
+2. Computational efficiency and performance optimization strategies implemented to handle large-scale data
+3. Detailed methodology and results from all experiments conducted on the development and validation datasets—not merely the final results, but the iterative process of experimentation, hypothesis testing, and refinement
+4. Final performance outcomes with comparative analysis against the baseline
+INF2006 | Group Project Assignment 2 | Page 3
+
+--- PAGE 4 ---
+
+5. Team contribution section as the concluding chapter, detailing individual member responsibilities and contributions.
+The report should reflect a systematic, data-driven approach to strategy enhancement, with clear justification for design decisions and thorough analysis of experimental outcomes.
+6. Project Phases
+Phase 1 - Data Exploration and Baseline Evaluation
+Goal: Understand the data and establish a performance benchmark before making any changes.
+7. Exploratory Data Analysis: Examine the datasets—review distributions, identify any anomalies, understand coverage across tickers and date ranges, and explore relationships between price and volume.
+8. Baseline evaluation: Run the provided baseline strategy on the development split and record all performance metrics.
+9. Visualisation: Use the provided chart functions to understand how the baseline performs over time periods of gain, loss, and the depth of drawdowns.
+10. Hypothesis formation: Based on the findings above, identify specific areas for potential improvement and document the reasoning. These hypotheses should guide Phase 2.
+Phase 2 - Strategy Development and Optimisation
+Goal: Build, test, and refine the enhanced strategy entirely on the development split.
+11. Extended EDA: Deepen the exploratory analysis to uncover further patterns that may inform strategy design.
+12. Implement the EnhancedStrategy class
+13. Iterate: Test different versions on the development split. Maintain a record of changes made and the effect of each.
+14. Parameter tuning: Experiment with specific values such as indicator window lengths, stop-loss thresholds, and sentiment confidence levels. Document what was explored.
+15. Baseline comparison: Measure the enhanced strategy against the baseline on the development split to confirm genuine improvement.
+During this phase, work exclusively with the development split. Consider creating internal train/validation subsets within this period for iterative testing. Do not consult the validation set until Phase 3.
+Phase 3
+Performance Evaluation and Analysis
+Goal: Evaluate the final strategy on unseen data and draw well-supported conclusions.
+INF2006 | Group Project Assignment 2 | Page 4
+
+--- PAGE 5 ---
+
+1. Validation evaluation: Once your strategy is finalized, run it on the validation split one time and report all performance metrics. Do not modify your strategy after seeing these results.
+2. Scalability and efficiency analysis: Assess whether the implementation handles the data volume efficiently. Document any techniques used to improve performance and discuss how the solution would scale with a larger dataset.
+3. Reflection: Discuss what was learned, identify the strengths and limitations of the approach, and consider what would be done differently given additional time.
+4. Assessment Criteria
+The project is assessed across the following dimensions. The emphasis is on methodology and analytical rigour, not solely on performance numbers.
+
+| Assessment Dimension | What We Look For | Weight |
+| --- | --- | --- |
+| Performance on Dev, Val and Test set | Performance achieved on development, validation and test dataset | 30% |
+| Computational Efficiency | Is there evidence of optimisation? | 30% |
+| Technical Report | Is the report clearly written and logically organised? | 30% |
+| Video Presentation | Does the video presentation communicate the work effectively? | 10% |
+
+6. Deliverables
+The following components are required for submission:
+7. Google Colab Notebook containing the complete solution along with individual contributions explicitly documented.
+8. Leaderboard Submission: Code must be uploaded to the leaderboard for live ranking and evaluation.
+9. Report: A written report prepared in accordance with the formatting guidelines outlined above.
+10. Video Presentation: A recorded presentation of the project. Further details for each submission component are provided below.
+6.1 Google Colab Notebook
+INF2006 | Group Project Assignment 2 | Page 5
+
+--- PAGE 6 ---
+
+| Item | Details |
+| --- | --- |
+| Filename | trading_assignment_Gxx.ipynb (replace Gxx with your group number) |
+| Submission | Upload your colab notebook on XSITE dropbox |
+
+6.2 Leaderboard & Ranking
+
+| Item | Details |
+| --- | --- |
+| Login Details | Log in using your @singaporetech.edu.sg email address via OTP authentication. Upon successful login, you will be able to submit your work and access the leaderboard. |
+| Evaluation Schedule | Code submissions will be evaluated twice daily at 12:00 AM and 12:00 PM (SGT), from 2nd March to 27th March. Your most recent submission prior to each deadline will be used for evaluation. Test scores will be released on 16th March. |
+| Submission Requirements | You are required to submit their EnhancedStrategy class, along with any new imports, initialisations, or helper functions, in the designated submission form. |
+
+Link for submission: [https://INF2006-Leaderboard.forth.ai](https://INF2006-Leaderboard.forth.ai)
+6.2 Written Report
+
+| Item | Details |
+| --- | --- |
+| Filename | Report_Gxx.pdf (replace Gxx with your group number) |
+| Format | All submissions must be prepared in LaTeX using the official template available on XSITE and submitted in PDF format. No other file formats will be accepted. Any unauthorized modifications to the template, including changes to margins, font size, or other formatting parameters, will be subject to a penalty. Submit the report to arxiv. |
+| Length | $15\pm5$ pages (excluding references and appendices) |
+| Content | Your report must include the following components: enhanced exploratory data analysis (EDA), computational and performance optimization strategies, detailed methodology and results from all experiments conducted on the development and validation datasets, final performance outcomes, and a team contribution section as the concluding chapter. |
+
+INF2006 | Group Project Assignment 2 Page 6
+
+--- PAGE 7 ---
+
+6.3 Video Presentation
+
+| Item | Details |
+| --- | --- |
+| Duration | $8\pm3$ minutes |
+| Upload | YouTube only—do not upload to the LMS (a penalty applies if this requirement is not followed) |
+| Submit | A text file Video_Gxx.txt containing team member names and the YouTube link |
+| Content | Each member must briefly articulate their individual contribution in the video |
+
+7. AI Usage Declaration
+If AI-assisted tools (e.g. ChatGPT, GitHub Copilot, Claude) are used in any part of the project, a subsection titled "AI Usage Declaration" must be included in the report. The declaration should clearly state:
+
+* Which AI tools were used
+* Which parts of the project were AI-assisted (e.g. code generation, debugging, documentation)
+* How the outputs were validated, modified, and integrated
+All members remain fully responsible for understanding, explaining, and defending all submitted work. Undeclared or inappropriate use of AI tools may be treated as an academic integrity issue.
+
+8. Notes
+
+* Computational optimisations should be documented. Given the scale of the data, efficiency is a graded component.
+* Standard Python libraries are permitted and must be cited appropriately.
+* Work should be distributed fairly across all team members, with contributions documented clearly in the report.
+* Plagiarism or misrepresentation of contributions will be penalised in accordance with university policy.
+All the best - we look forward to seeing your analytical approaches and insights.
+INF2006 | Group Project Assignment 2 Page 7
+
+--- PAGE 8 ---
+
+APPENDIX
+Technical Reference and Detailed Guidance
+A. Dataset Details
+A.1 Price Data Schema
+Historical daily price data for S&P 500 stocks:
+
+| Column | Description |
+| --- | --- |
+| ticker | Stock symbol (e.g., AAPL, MSFT, GOOGL) |
+| date | Trading date |
+| open, high, low, close | Opening, highest, lowest, and closing price for that day (OHLC) |
+| volume | Number of shares traded that day |
+
+A.2 Earnings Call Transcript Schema
+Quarterly earnings call transcripts used for sentiment analysis:
+
+| Column | Description |
+| --- | --- |
+| ticker | Stock symbol |
+| date | Date of the earnings call |
+| transcript | Full text of the earnings call |
+| quarter | Fiscal quarter (e.g., Q1 2023, Q4 2022) |
+
+B. Baseline Strategy and Backtest Details
+B.1 Baseline Strategy Rules
+The baseline implements a simple moving average crossover strategy enhanced with sentiment analysis from earnings calls.
+
+| Condition | Rule |
+| --- | --- |
+| Entry (Buy) | The stock's current price is above its 50-day average price, AND there is either no recent earnings call OR the earnings call had a positive tone. |
+
+INF2006 | Group Project Assignment 2 | Page 8
+
+--- PAGE 9 ---
+
+| Condition | Rule |
+| --- | --- |
+| Exit (Sell) | The stock's price falls below its 50-day average, OR the position has declined by 20% or more from the original purchase price (stop-loss). |
+| Sentiment model | FinBERT (ProsusAI/finbert)—a language model fine-tuned on financial text. It classifies earnings call transcripts as Positive, Negative, or Neutral. |
+
+B.2 How the Backtest Works
+The backtesting framework evaluates the strategy once per week, every Friday. No price monitoring or trade execution occurs on any other day. The following sequence occurs at each evaluation date:
+
+1. Evaluate all stocks: The strategy examines the latest price and indicator values for all stocks in the dataset.
+2. Generate signals: For each stock, the strategy logic returns a BUY, SELL, or HOLD signal.
+3. Execute trades: Stocks signalled BUY are purchased (if not already held). Stocks signalled SELL are liquidated. All remaining positions are held unchanged.
+4. Record portfolio value: The total value of all holdings plus cash is recorded for that Friday.
+No Intra-Week Trading
+The simulation executes only on Fridays. There is no monitoring or trading between weekly evaluation dates. If a stock crosses a stop-loss threshold on a Wednesday, the strategy will not react until the following Friday. This is a deliberate design constraint that ensures consistency across all evaluations.
+Practical details:
+Cash: Uninvested capital remains as cash and is available for new positions the following week.
+Position size: By default, each new position targets a fixed amount per stock. This may be modified in the enhanced strategy.
+Transaction costs: The baseline assumes zero transaction costs. These may optionally be incorporated to improve simulation realism.
+C. Enhancement Areas
+Guidance
+The following sections provide directional guidance for each enhancement area. These are not exhaustive instructions—you are expected to explore, make informed decisions, and justify your choices.
+INF2006 | Group Project Assignment 2 Page 9
+
+--- PAGE 10 ---
+
+C.1 Exploratory Data Analysis
+The provided notebook includes a basic EDA as a starting point. Consider what additional analysis would give a clearer understanding of the data before any strategy decisions are made. What patterns exist in price behaviour, volume, or transcript characteristics? What anomalies or data quality issues might affect results? The findings from this phase should directly inform the choices made in subsequent areas.
+C.2 Data Cleaning and Preparation
+Raw financial data often contains gaps, anomalies, and inconsistencies that can distort indicator calculations and backtest results. Consider how missing price values should be handled, whether all stocks have sufficient historical coverage to be included, and whether any observations appear to be erroneous. Also consider whether the composition of the dataset introduces any systematic bias in historical performance estimates.
+C.3 Technical Indicators and Features
+The baseline relies solely on a 50-day moving average. A range of additional indicators exists that capture different aspects of price behaviour - momentum, mean reversion, volatility, and volume dynamics, among others. Consider which of these might be informative for the trading signals, how their parameters should be set, and whether combining multiple indicators leads to more reliable signals than any single one in isolation.
+Note: Computing indicators across a large number of stocks and many years of data can be computationally expensive when implemented iteratively. Consider how vectorised or parallelised approaches might improve performance, and document the impact.
+C.4 Better Use of Earnings Transcripts
+The baseline extracts a fixed excerpt from each transcript and produces a single sentiment label. Consider finding the most informative sections of the transcript, confidence score returned by FinBERT to weight the signal, and role of neutral sentiment in decision-making. Think about how sentiment patterns across multiple quarters might add further predictive value.
+C.5 Entry, Exit, and Risk Rules
+The baseline uses a single indicator for entry and a fixed stop-loss for exit. Consider whether requiring agreement across multiple signals before entering a trade improves outcome quality, how position sizing might be adjusted to reflect signal confidence, and whether alternative exit conditions such as a tighter stop-loss or a profit target, would improve overall performance. Also consider how concentration risk across positions should be managed.
+INF2006 | Group Project Assignment 2 Page 10
+
+--- PAGE 11 ---
+
+D. Scalability and Computational Efficiency
+With approximately two million price records in the development set, naive iterative implementations are likely to be slow and may encounter memory constraints. To handle this you could experiment with vectorization and parallelization. Your solution should be able to handle larger dataset than current size without significant performance degradation. Scalability is highly valued therefore design your solution to be robust.
+E. Performance Metrics Reference
+The following metrics are used to evaluate strategy performance:
+
+| Metric | Description | Target |
+| --- | --- | --- |
+| Total Return | Overall percentage change in portfolio value from start to end of the evaluation period. | Maximise |
+| Sharpe Ratio | Return per unit of risk (volatility). Higher values indicate better risk-adjusted performance. A value above 1.0 is generally considered favourable. | >1.0 |
+| Maximum Drawdown | The largest peak-to-trough decline in portfolio value before recovery. Indicates the worst-case loss experienced during the period. | Minimise |
+| Win Rate | The proportion of individual trades closed at a profit. | >40% |
+| Volatility | Annualised standard deviation of weekly portfolio returns. Measures the stability of returns over time. | Lower for equivalent return |
+
+The development set spans a significantly longer evaluation horizon than the validation set. The higher cumulative return observed on the development set is therefore expected and should not be interpreted as evidence of superior strategy performance. For cross-period comparison, the Sharpe ratio can be referred, it is annualised and accounts for the difference in evaluation window.
+
+* End of Appendix -
+INF2006 | Group Project Assignment 2 | Page 11
