@@ -131,5 +131,46 @@ Win Rate: 47.5%
 Volatility: 14.27%
 Total Trades: 3,000
 
+======================================================================
+ENHANCED STRATEGY EVALUATION (Development) Bollinger Band Mean Reversion
+# Buy quality stocks (EMA-200 uptrend) that pull back
+#             near the lower Bollinger Band, exit when mean reverts.
+======================================================================
+FinBERT: INT8 quantization applied — ~2-4x inference speedup.
+
+[DEV SPLIT - For Development]
+Loading DEV split data...
+Cleaning and preprocessing data...
+Data ready: 1,242,868 price records
+Running evaluation...
+Running backtest simulation...
+Return: 348.57%
+Sharpe Ratio: 2.19
+Max Drawdown: -16.73%
+Win Rate: 67.7%
+Volatility: 19.25%
+Total Trades: 11,745
+
+======================================================================
+FINAL PERFORMANCE Bollinger Band Mean Reversion
+# Buy quality stocks (EMA-200 uptrend) that pull back
+#             near the lower Bollinger Band, exit when mean reverts.
+======================================================================
+
+[VAL SPLIT - Final Performance]
+Loading VAL split data...
+Cleaning and preprocessing data...
+Data ready: 596,741 price records
+Running evaluation...
+Running backtest simulation...
+Return: 67.26%
+Sharpe Ratio: 1.27
+Max Drawdown: -31.39%
+Win Rate: 62.6%
+Volatility: 32.14%
+Total Trades: 4,002
+
 Time Taken For Base RSI + MACD with 4080 GPU = 3min 8.3s, 2min 59.2s
 Time Taken For Efficient RSI + MACD with 4080 GPU = 3min 7.1s, 2min 57s
+Time Taken For Bollinger Band Mean Revision with 4080 GPU = 3min 2s, 2min 56s
+
